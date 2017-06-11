@@ -13,17 +13,6 @@ app.listen(3000, function(){
 });
 
 function generateStudents(){
-	var numberOfStudents = chance.integer({
-		min: 0,
-		max: 3
-	});
-	console.log(numberOfStudents);
-	var students = [];
-	for(var i = 0; i < numberOfStudents; i++) {
-		students.push({
-			cc_types: chance.cc_types()
-		});
-	};
-	console.log(students);
-	return students;		
+
+	return chance.cc_types();		
 }
