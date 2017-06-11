@@ -15,25 +15,13 @@ app.listen(3000, function(){
 function generateStudents(){
 	var numberOfStudents = chance.integer({
 		min: 0,
-		max: 10
+		max: 3
 	});
 	console.log(numberOfStudents);
 	var students = [];
 	for(var i = 0; i < numberOfStudents; i++) {
-		var gender = chance.gender();
-		var birthYear = chance.year({
-			min: 1986,
-			max: 1996
-		});
 		students.push({
-			firstName: chance.first({
-				gender: gender
-			}),
-			lastName: chance.last(),
-			gender: gender,
-			birthday: chance.birthday({
-				year: birthYear
-			})
+			cc_types: chance.cc_types()
 		});
 	};
 	console.log(students);
