@@ -13,6 +13,22 @@ app.listen(3000, function(){
 });
 
 function generateStudents(){
+	
+    var numberOfTimeZone = chance.integer({min : 0, max : 10});
+    
+    console.log(numberOfTimeZone);
+    var timeZones = [];
 
-	return chance.cc_types();		
+    for(var i = 0; i < numberOfTimeZone; ++i){
+        
+        var timezone = chance.timezone();
+        timeZones.push({
+            name : timezone.name,
+            text : timezone.text,
+            utc  : timezone.utc
+        });    
+    };
+    
+    console.log(timeZones);
+    return timeZones;
 }
