@@ -1,4 +1,4 @@
-$(function() {
+$(function(){
 	console.log("Loading students");
 	
 	function loadStudents() {
